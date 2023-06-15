@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button buttonJogar;
@@ -22,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ResultadoActivity.class);
+
+                // Random aleatorio = new Random(2);
+                //int numero = (int) (aleatorio.nextDouble() * 2);
+                int numero = new Random().nextInt(2);
+                intent.putExtra("numero", numero);
+
                 startActivity(intent);
             }
         });
